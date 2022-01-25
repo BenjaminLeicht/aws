@@ -7,7 +7,12 @@ import os
 
 def createFile(name):
     # Use a breakpoint in the code line below to debug your script.
-    os.remove(f'testfolder/{name}.txt')
+
+    if os.path.exists(f'testfolder/{name}.txt'):
+        os.remove(f'testfolder/{name}.txt')
+    else:
+        print("The file does not exist")
+
     f = open(f'testfolder/{name}.txt', "x")
 
 # Press the green button in the gutter to run the script.
